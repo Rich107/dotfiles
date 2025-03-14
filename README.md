@@ -34,3 +34,8 @@ DevPod will look for the following file names and execute them:
 
 My preference is to keep my Neovim/TMUX dotfiles separate to make them easier to maintain on my mac.
 Ideally I want one nvim and one TMUX config
+
+
+## Assumptions:
+-  These dotfiles will be used on a linux based container either running on a linux host or mac host (have not tested windows or linux)
+-  The project devcontainer.json will have the neovim feature installing neovim 0.8 or higher
