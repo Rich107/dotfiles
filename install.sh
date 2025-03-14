@@ -21,8 +21,8 @@ sudo install lazygit -D -t /usr/local/bin/
 
 echo "All packages have been installed."
 
-# Set up pure prompt
-git clone https://github.com/sindresorhus/pure.git "~/.zsh/pure"
+# # Set up pure prompt
+# git clone https://github.com/sindresorhus/pure.git "~/.zsh/pure"
 
 # Nvim config:
 git clone https://github.com/Rich107/neovim-config.git ~/.config/nvim/
