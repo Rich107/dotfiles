@@ -13,20 +13,27 @@
 #     direnv
 # )
 
-# lazygit:
+echo "Installing lazygit:"
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit -D -t /usr/local/bin/
 
-echo "All packages have been installed."
+echo "Installing github tbc:"
 
-# # Set up pure prompt
+echo "Set up pure prompt"
 # git clone https://github.com/sindresorhus/pure.git "~/.zsh/pure"
 
-# Nvim config:
+echo "Nvim config:"
 git clone https://github.com/Rich107/neovim-config.git ~/.config/nvim/
 
-# Set up completions
+echo "Install fzf for telescope to work:"
+sudo apt update -y && apt install -y curl wget tmux tar ripgrep build-essential fzf
+
+echo "Set Mason installs for Nvim (this will save waiting on the first nvim reboot"
+sudo nvim --headless -c "MasonInstallAll" -c "qall"
+
+# Install NVM for npm
+sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 echo "Setup complete. Zsh configuration files have been downloaded and set up."
