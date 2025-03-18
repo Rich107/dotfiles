@@ -30,7 +30,7 @@ echo "Nvim config:"
 git clone https://github.com/Rich107/neovim-config.git ~/.config/nvim/
 
 echo "Install fzf for telescope to work:"
-sudo apt update -y && apt install -y curl wget tmux tar ripgrep build-essential fzf
+sudo apt update -y && apt install -y curl wget tar ripgrep build-essential fzf
 
 echo "Set Mason installs for Nvim (this will save waiting on the first nvim reboot"
 sudo nvim --headless -c "MasonInstallAll" -c "qall"
