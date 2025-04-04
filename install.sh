@@ -21,19 +21,17 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/downl
 tar xf lazygit.tar.gz lazygit
 install lazygit -D -t /usr/local/bin/
 
-echo "Installing github tbc:"
-
 echo "Set up pure prompt"
 # git clone https://github.com/sindresorhus/pure.git "~/.zsh/pure"
 
 echo "Nvim config:"
 git clone https://github.com/Rich107/neovim-config.git ~/.config/nvim/
 
+echo "Install fzf for telescope to work githib  cli ssh and bits"
+apt update -y && apt install -y openssh-client gh curl wget tar ripgrep build-essential fzf
+
 echo "Install ssh as not all containers have it installed"
 apt apt install openssh-client
-
-echo "Install fzf for telescope to work:"
-apt update -y && apt install -y curl wget tar ripgrep build-essential fzf
 
 echo "Set Mason installs for Nvim (this will save waiting on the first nvim reboot"
 nvim --headless -c "MasonInstallAll" -c "qall"
