@@ -27,7 +27,7 @@ echo "Set up pure prompt"
 echo "Nvim config:"
 git clone https://github.com/Rich107/neovim-config.git ~/.config/nvim/
 
-echo "Install fzf for telescope to work githib  cli ssh and bits"
+echo "Install fzf for telescope to work githib cli ssh and bits"
 apt update -y && apt install -y openssh-client gh curl wget tar ripgrep build-essential fzf
 
 echo "Install ssh as not all containers have it installed"
