@@ -7,6 +7,12 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/downl
 tar xf lazygit.tar.gz lazygit
 install lazygit -D -t /usr/local/bin/
 
+# This allows for better git diffs in git cli and lazygit
+echo "install git-delta with cargo"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+cargo install git-delta
+
 echo "Set up pure prompt"
 # git clone https://github.com/sindresorhus/pure.git "~/.zsh/pure"
 
