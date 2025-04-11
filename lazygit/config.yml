@@ -1,0 +1,15 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never --syntax-theme 1337
+  disableForcePushing: true
+  mainBranches:
+    - master
+    - main
+    - production
+  autoFetch: true
+  fetchAll: true
+  os:
+    edit: "nvim +{{line}} {{filename}}"
+    open: "nvim {{filename}}"
+

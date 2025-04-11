@@ -1,0 +1,35 @@
+[user]
+	name = Rich107
+	email = small.car3251@fastmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGZrA0G7F79oXgyZAhLPJ+ar1/6/iXr+AuLxYsI7fPNf
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+[core]
+    pager = delta
+	autocrlf = input
+    editor = nvim
+	compression = 9
+[interactive]
+    diffFilter = delta
+[delta]
+	navigate = true           # n/N to jump between hunks
+	side-by-side = true       # side-by-side diff
+	line-numbers = true       # show line numbers
+	syntax-theme = 1337       # the theme you like
+	dark = true               # use dark mode
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+	tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = nvim -d "$LOCAL" "$REMOTE"
+[http]
+    postBuffer = 524288000
+[pull]
+    rebase = false
+
