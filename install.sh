@@ -25,7 +25,8 @@ apt update -y && apt install -y openssh-client gh curl wget tar ripgrep build-es
 echo "Install ssh as not all containers have it installed"
 apt apt install openssh-client
 
-echo "Set Mason installs for Nvim (this will save waiting on the first nvim reboot"
+# this will save waiting on the first nvim reboot
+echo "Run Mason installs for Nvim"
 nvim --headless -c "MasonInstallAll" -c "qall"
 
 # Install NVM for npm
