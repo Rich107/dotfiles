@@ -11,7 +11,7 @@ install lazygit -D -t /usr/local/bin/
 
 # This allows for better git diffs in git cli and lazygit
 echo "install git-delta with cargo"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 cargo install git-delta
 
@@ -21,11 +21,8 @@ echo "Set up pure prompt"
 echo "Nvim config:"
 git clone https://github.com/Rich107/neovim-config.git ~/.config/nvim/
 
-echo "Install fzf for telescope to work githib cli ssh and bits"
-apt update -y && apt install -y openssh-client gh curl wget tar ripgrep build-essential fzf
-
-echo "Install ssh as not all containers have it installed"
-apt apt install openssh-client
+echo "Install fzf for telescope to work, plus githib cli ssh and bits"
+apt update -y && apt install -y openssh-client bat less gh curl wget tar ripgrep build-essential fzf
 
 # this will save waiting on the first nvim reboot
 echo "Run Mason installs for Nvim"
