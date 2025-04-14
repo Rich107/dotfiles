@@ -133,6 +133,3 @@ export EDITOR=nvim
 export VISUAL=nvim
 export OPEN=nvim
 
-
-
-
