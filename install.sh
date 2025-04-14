@@ -19,6 +19,7 @@ cargo install dust
 cargo install ripgrep
 cargo install atuin
 cargo install fd
+cargo install tealdeer
 
 echo "copying in gitconfig"
 rm ~/.gitconfig
@@ -37,7 +38,7 @@ echo "Nvim config:"
 git clone https://github.com/Rich107/neovim-config.git ~/.config/nvim/
 
 echo "Install fzf for telescope to work, plus githib cli ssh and bits"
-apt update -y && apt install -y openssh-client less gh curl wget tar ripgrep build-essential fzf
+apt update -y && apt install -y openssh-client less zsh gh curl wget tar ripgrep build-essential fzf
 
 # this will save waiting on the first nvim reboot
 echo "Run Mason installs for Nvim"
