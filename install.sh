@@ -11,7 +11,9 @@ install lazygit -D -t /usr/local/bin/
 echo "install git-delta with cargo"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
+export PATH="$HOME/.cargo/bin:$PATH"
 cargo install git-delta
+cargo install eza
 
 echo "copying in gitconfig"
 rm ~/.gitconfig
