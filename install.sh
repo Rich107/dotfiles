@@ -40,9 +40,12 @@ git clone https://github.com/Rich107/neovim-config.git ~/.config/nvim/
 echo "Install fzf for telescope to work, plus githib cli ssh and bits"
 apt update -y && apt install -y openssh-client less zsh gh curl wget tar ripgrep build-essential fzf
 
+echo "Install Oh My zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # this will save waiting on the first nvim reboot
 echo "Run Mason installs for Nvim"
-nvim --headless -c "MasonInstallAll" -c "qall"
+nvim --headless -c "MasonInstall *" -c "qall"
 
 # Install NVM for npm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
