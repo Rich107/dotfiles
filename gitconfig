@@ -22,7 +22,12 @@
 	syntax-theme = 1337       # the theme you like
 	dark = true               # use dark mode
 [merge]
-    conflictstyle = diff3
+  tool = nvim
+[mergetool "nvim"]
+  cmd = nvim -c "DiffviewOpen"
+[mergetool]
+  prompt = false
+  prompt = false
 [diff]
     colorMoved = default
 	tool = nvimdiff
