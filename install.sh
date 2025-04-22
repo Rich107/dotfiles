@@ -8,10 +8,13 @@ tar xf lazygit.tar.gz lazygit
 install lazygit -D -t /usr/local/bin/
 
 # This allows for better git diffs in git cli and lazygit
-echo "install git-delta with cargo"
+echo "Installing cargo:"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-source $HOME/.cargo/env
-export PATH="$HOME/.cargo/bin:$PATH"
+export CARGO_HOME="$HOME/.cargo"
+export PATH="$CARGO_HOME/bin:$PATH"
+. "$CARGO_HOME/env"
+
+echo "installing git-delta, eza, bat, dust, ripgrep, atuin, fd, tealdeer with cargo"
 cargo install git-delta
 cargo install eza
 cargo install bat
@@ -38,7 +41,7 @@ echo "Nvim config:"
 git clone https://github.com/Rich107/neovim-config.git ~/.config/nvim/
 
 echo "Install fzf for telescope to work, plus githib cli ssh and bits"
-apt update -y && apt install -y xclip openssh-client less zsh gh curl wget tar ripgrep build-essential fzf
+apt update -y && apt install -y xclip openssh-client less zsh gh curl wget tar build-essential fzf
 
 echo "Install Oh My zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
