@@ -38,7 +38,7 @@ echo "Nvim config:"
 git clone https://github.com/Rich107/neovim-config.git ~/.config/nvim/
 
 echo "Install fzf for telescope to work, plus githib cli ssh and bits"
-apt update -y && apt install -y openssh-client less zsh gh curl wget tar ripgrep build-essential fzf
+apt update -y && apt install -y xclip openssh-client less zsh gh curl wget tar ripgrep build-essential fzf
 
 echo "Install Oh My zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
