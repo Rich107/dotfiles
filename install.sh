@@ -19,10 +19,10 @@ echo "Richard look here!"
 cargo install git-delta
 cargo install eza
 cargo install bat
-cargo install dust
+cargo install du-dust
 cargo install ripgrep
 cargo install atuin
-cargo install fd
+cargo install fd-find
 cargo install tealdeer
 
 cargo --version
