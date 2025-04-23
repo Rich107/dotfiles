@@ -14,8 +14,6 @@ export CARGO_HOME="$HOME/.cargo"
 export PATH="$CARGO_HOME/bin:$PATH"
 . "$CARGO_HOME/env"
 . "$HOME/.cargo/env"
-echo 'export CARGO_HOME="$HOME/.cargo"' >>~/.bashrc
-echo 'export PATH="$CARGO_HOME/bin:$PATH"' >>~/.bashrc
 
 echo "installing git-delta, eza, bat, du-dust, ripgrep, atuin, fd-find, tealdeer with cargo"
 echo "Richard look here!"
