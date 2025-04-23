@@ -13,6 +13,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 export CARGO_HOME="$HOME/.cargo"
 export PATH="$CARGO_HOME/bin:$PATH"
 . "$CARGO_HOME/env"
+echo 'export CARGO_HOME="$HOME/.cargo"' >>~/.bashrc
+echo 'export PATH="$CARGO_HOME/bin:$PATH"' >>~/.bashrc
 
 echo "installing git-delta, eza, bat, du-dust, ripgrep, atuin, fd-find, tealdeer with cargo"
 echo "Richard look here!"
