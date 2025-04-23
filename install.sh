@@ -13,6 +13,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 export CARGO_HOME="$HOME/.cargo"
 export PATH="$CARGO_HOME/bin:$PATH"
 . "$CARGO_HOME/env"
+. "$HOME/.cargo/env"
 echo 'export CARGO_HOME="$HOME/.cargo"' >>~/.bashrc
 echo 'export PATH="$CARGO_HOME/bin:$PATH"' >>~/.bashrc
 
