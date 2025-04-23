@@ -14,7 +14,7 @@ export CARGO_HOME="$HOME/.cargo"
 export PATH="$CARGO_HOME/bin:$PATH"
 . "$CARGO_HOME/env"
 
-echo "installing git-delta, eza, bat, dust, ripgrep, atuin, fd, tealdeer with cargo"
+echo "installing git-delta, eza, bat, du-dust, ripgrep, atuin, fd-find, tealdeer with cargo"
 cargo install git-delta
 cargo install eza
 cargo install bat
