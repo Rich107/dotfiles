@@ -15,6 +15,7 @@ export PATH="$CARGO_HOME/bin:$PATH"
 . "$CARGO_HOME/env"
 
 echo "installing git-delta, eza, bat, du-dust, ripgrep, atuin, fd-find, tealdeer with cargo"
+echo "Richard look here!"
 cargo install git-delta
 cargo install eza
 cargo install bat
@@ -23,6 +24,8 @@ cargo install ripgrep
 cargo install atuin
 cargo install fd
 cargo install tealdeer
+
+cargo --version
 
 echo "copying in gitconfig"
 rm ~/.gitconfig
