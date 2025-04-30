@@ -42,6 +42,7 @@ echo "Set up pure prompt"
 # git clone https://github.com/sindresorhus/pure.git "~/.zsh/pure"
 
 echo "Nvim config:"
+rm -rf ~/.config/nvim
 git clone https://github.com/Rich107/neovim-config.git ~/.config/nvim/
 
 echo "Install fzf for telescope to work, plus githib cli ssh and bits"
