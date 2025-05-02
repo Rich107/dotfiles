@@ -39,3 +39,11 @@ Ideally I want one nvim and one TMUX config
 ## Assumptions:
 -  These dotfiles will be used on a linux based container either running on a linux host or mac host (have not tested windows or linux)
 -  The project devcontainer.json will have the neovim feature installing neovim 0.8 or higher
+
+## ToDo:
+-  Sort out clip board access:
+    * Right now only copying from neovim gets back to the host outside the container
+    * Copying branch names from lazygit fails
+    * Look at using [clipper](https://github.com/wincent/clipper):
+       -[Using clipper to pip to clipboard](https://github.com/jesseduffield/lazygit/issues/1617)
+-  Fix lazygit being able to open PRs by using the host machines browser
