@@ -58,4 +58,7 @@ nvim --headless -c "MasonInstall *" -c "qall"
 # Install NVM for npm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
+echo "Aliases:"
+echo "alias ls='eza -lh'" >>~/.zshrc
+
 echo "Setup complete. Zsh configuration files have been downloaded and set up."
