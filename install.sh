@@ -52,8 +52,9 @@ echo "Install Oh My zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # this will save waiting on the first nvim reboot
-echo "Run Mason installs for Nvim"
-nvim --headless -c "MasonInstall *" -c "qall"
+# This is causing some issues going to install it manually to see whats going on
+# echo "Run Mason installs for Nvim"
+# nvim --headless -c "MasonInstall *" -c "qall"
 
 # Install NVM for npm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
