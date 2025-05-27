@@ -31,7 +31,7 @@ cargo --version
 echo "copying in gitconfig"
 rm ~/.gitconfig
 cp ~/dotfiles/gitconfig ~/.gitconfig
-cat ~/.config/lazygit/config.yml
+cat ~/.gitconfig
 
 echo "copying in lazygit config"
 rm ~/.config/lazygit/config.yml
