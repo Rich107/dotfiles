@@ -28,6 +28,9 @@ cargo install tealdeer
 
 cargo --version
 
+echo "Installing Artuin for history in terminal commands"
+echo 'eval "$(atuin init zsh)"' >>~/.zshrc
+
 echo "copying in gitconfig"
 rm ~/.gitconfig
 cp ~/dotfiles/gitconfig ~/.gitconfig
