@@ -31,6 +31,11 @@ cargo --version
 echo "Installing Artuin for history in terminal commands"
 echo 'eval "$(atuin init zsh)"' >>~/.zshrc
 
+echo "copying in mcphub config "
+rm ~/.config/mcphub/servers.json
+cp ~/dotfiles/mcphub/servers.json ~/.config/mcphub/servers.json
+cat ~/.config/mcphub/servers.json
+
 echo "copying in gitconfig"
 rm ~/.gitconfig
 cp ~/dotfiles/gitconfig ~/.gitconfig
