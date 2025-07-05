@@ -80,6 +80,22 @@ apt update
 apt install gh
 gh extension install dlvhdr/gh-dash
 
+echo "Insatlling dependencies for Neovim"
+apt-get update -y
+apt-get -y install ninja-build gettext cmake unzip curl build-essential
+apt-get -y clean
+rm -rf /var/lib/apt/lists/*
+
+echo "Downloading nvim source for stable"
+curl -sL https://github.com/neovim/neovim/archive/refs/tags/stable.tar.gz | tar -xzC /tmp 2>&1
+
+echo "Building... nvim"
+cd /tmp/neovim-stable
+make CMAKE_BUILD_TYPE=Release && make CMAKE_INSTALL_PREFIX=/usr/local/nvim install
+ln -sf /usr/local/nvim/bin/nvim /usr/local/bin/nvim
+echo "cleaning up..."
+rm -rf /tmp/neovim-stable
+
 echo "Aliases:"
 echo "alias ls='eza -lh'" >>~/.zshrc
 
