@@ -133,3 +133,12 @@ export EDITOR=nvim
 export VISUAL=nvim
 export OPEN=nvim
 
+
+checkout-remote() {
+  git fetch --all
+  local branch
+  branch=$(git branch -r | grep -v '\->' | sed 's|origin/||' | sort -u | \
+    fzf --prompt="Checkout remote branch: " | sed 's/^ *//;s/ *$//') || return
+  git checkout -t "origin/$branch"
+}
+
