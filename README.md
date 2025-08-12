@@ -40,6 +40,57 @@ Ideally I want one nvim and one TMUX config
 -  These dotfiles will be used on a linux based container either running on a linux host or mac host (have not tested windows or linux)
 -  The project devcontainer.json will have the neovim feature installing neovim 0.8 or higher
 
+## Securely fetch dev_local.py from 1Password
+
+This repo doesn’t store secrets. Use a 1Password Service Account and the CLI to pull `dev_local.py` on demand.
+
+### Prereqs
+- 1Password account (Business/Team) with access to a vault you control
+- 1Password CLI v2+ installed: https://developer.1password.com/docs/cli/get-started/
+- `jq` installed (for JSON parsing)
+
+### One-time setup (manual)
+1. Create a vault
+   - In 1Password web: New → Vault → name it (e.g., “Dev Secrets”).
+2. Add `dev_local.py` to the vault
+   - Option A (Document): New → Document → upload `dev_local.py` → name it `dev_local.py`.
+   - Option B (Item with file attachment): New → Secure Note (or any item) → Attach file `dev_local.py` → ensure the item name is `dev_local.py` (or remember it).
+3. Create a Service Account and token
+   - 1Password web → Developer → Service Accounts → New Service Account.
+   - Scope: Read access to your chosen vault.
+   - Copy the generated token and store it securely (you’ll pass it to the script).
+
+Notes:
+- Service Account tokens do not require device pairing and work non-interactively.
+- Keep the token out of your shell history; prefer env vars or a manager.
+
+### Fetch script
+This repo includes `fetch_dev_local.sh` which:
+- Takes the Service Account token as the first argument
+- Asks for: vault name and destination path
+- Downloads `dev_local.py` from the vault and saves it
+
+Usage:
+```bash
+./fetch_dev_local.sh "<OP_SERVICE_ACCOUNT_TOKEN>"
+```
+
+You’ll be prompted for:
+- Vault name (e.g., Dev Secrets)
+- Item/file name (defaults to `dev_local.py`)
+- Destination path (full path, defaults to `/tmp/dev_local.py`)
+
+### Common issues
+- op not found: install the CLI and ensure it’s on PATH.
+- Vault not accessible: confirm the Service Account has read access to that vault.
+- Item not found: confirm the name in 1Password matches `dev_local.py` or enter the exact item/document name when prompted.
+- Attachments vs documents: the script handles both a Document named `dev_local.py` and an Item with a file attachment.
+
+### Security
+- The token isn’t stored; it’s used only for the current run.
+- Output file is chmod 600.
+- Don’t commit the token or `dev_local.py` to git.
+
 ## ToDo:
 -  Sort out clip board access:
     * Right now only copying from neovim gets back to the host outside the container
