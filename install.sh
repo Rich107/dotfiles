@@ -99,4 +99,10 @@ rm -rf /tmp/neovim-stable
 echo "Aliases:"
 echo "alias ls='eza -lh'" >>~/.zshrc
 
+echo "installing opencode cli"
+npm i -g opencode-ai@latest
+apt-get update && apt-get install libsqlite3-dev
+apt-get update && apt-get install -y lsof
+echo "Finished installing opencode cli"
+
 echo "Setup complete. Zsh configuration files have been downloaded and set up."
