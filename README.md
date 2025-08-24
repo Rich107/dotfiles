@@ -1,5 +1,8 @@
 # dotfiles
-For use inside my DevPod containers 
+For use inside my DevPod containers make sure it is included like so:
+<img width="1370" height="641" alt="image" src="https://github.com/user-attachments/assets/07e2702f-3e57-4595-8098-041a953e5ac2" />
+Note that this is using the HTTPS addres to avoid auth issues with sudo not being on some of the images that I use. 
+Double note that when downloading a project you want to do the opposite and use the ssh not HTTPS to ensure git creds work with commits and you don't have to reauth
 
 ## How to use:
 
