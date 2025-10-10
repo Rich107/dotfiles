@@ -105,6 +105,9 @@ apt-get update && apt-get install libsqlite3-dev
 apt-get update && apt-get install -y lsof
 echo "Finished installing opencode cli"
 
+echo "Install just"
+apt-get install just
+
 echo "Installing carapace"
 echo "export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense,just,git,pip,tmux,npm,nvim,lazygit,tail,tar,ssh'" >>~/.zshrc
 echo "zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'" >>~/.zshrc
