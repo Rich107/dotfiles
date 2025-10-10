@@ -10,8 +10,8 @@ install lazygit -D -t /usr/local/bin/
 # This allows for better git diffs in git cli and lazygit
 echo "Installing cargo:"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-export CARGO_HOME="$HOME/.cargo"
-export PATH="$CARGO_HOME/bin:$PATH"
+echo "export CARGO_HOME='$HOME/.cargo'" >>~/.zshrc
+echo "export PATH='$CARGO_HOME/bin:$PATH'" >>~/.zshrc
 . "$CARGO_HOME/env"
 . "$HOME/.cargo/env"
 
@@ -104,5 +104,10 @@ npm i -g opencode-ai@latest
 apt-get update && apt-get install libsqlite3-dev
 apt-get update && apt-get install -y lsof
 echo "Finished installing opencode cli"
+
+echo "Installing carapace"
+echo "export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense,just,git,pip,tmux,npm,nvim,lazygit,tail,tar,ssh'" >>~/.zshrc
+echo "zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'" >>~/.zshrc
+echo "source <(carapace _carapace)" >>~/.zshrc
 
 echo "Setup complete. Zsh configuration files have been downloaded and set up."
