@@ -109,6 +109,10 @@ echo "Install just"
 apt-get install just
 
 echo "Installing carapace"
+echo "deb [trusted=yes] https://apt.fury.io/rsteube/ /" >> /etc/apt/sources.list.d/fury.list
+apt-get update && apt-get install carapace-bin
+
+echo "Installing carapace"
 echo "export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense,just,git,pip,tmux,npm,nvim,lazygit,tail,tar,ssh'" >>~/.zshrc
 echo "zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'" >>~/.zshrc
 echo "source <(carapace _carapace)" >>~/.zshrc
